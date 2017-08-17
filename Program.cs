@@ -1,10 +1,14 @@
-﻿using System;
+﻿using ConsoleAppExcersices.BE;
+using ConsoleAppExcersices.GUI;
+using System;
+using System.Collections.Generic;
 
 namespace ConsoleAppExcersices
 {
     class Program
     {
-        string[] items = { "Create", "Read", "Update", "Delate" };
+        private List<MenuItem> items;
+        private Model model;
 
         static void Main(string[] args)
         {
@@ -13,29 +17,39 @@ namespace ConsoleAppExcersices
 
         public Program()
         {
-            
+            model = new Model();
+            items = new List<MenuItem>();
+
+            MenuCreate menuCreate = new MenuCreate("Create");
+            menuCreate.Model = model;
+            items.Add(menuCreate);
+
+
             int chosenItem = CreateMenu(items);
-            Console.WriteLine(chosenItem);
+
+            items[chosenItem].Action();
+            //Console.WriteLine(chosenItem);
             Console.ReadLine();
 
 
         }
 
-        private int CreateMenu(string[] items)
+        private int CreateMenu(List<MenuItem> items)
         {
             Console.Clear();
+            Console.WriteLine("------Menu------\n");
             
-            for (int i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Count; i++)
             {
-                Console.WriteLine((i + 1) + ": " + items[i]);
+                Console.WriteLine((i + 1) + ": " + items[i].Name);
             }
 
             int chosenItem;
-            while (!int.TryParse(Console.ReadLine(),out chosenItem) && chosenItem > 0 && chosenItem < 6)
+            while ((!int.TryParse(Console.ReadLine(),out chosenItem)) || chosenItem <= 0 || chosenItem > items.Count)
             {
-                Console.WriteLine("Enter number between 1-5");
+                Console.WriteLine($"Enter number between 1-{items.Count}");
             }
-            return chosenItem;
+            return chosenItem-1;
             
         }
 

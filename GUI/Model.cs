@@ -6,9 +6,11 @@ namespace ConsoleAppExcersices.GUI
 {
     public class Model
     {
+        public List<Video> videos { get; }
+
         public Model()
         {
-
+            videos = new List<Video>();
         }
     }
 }

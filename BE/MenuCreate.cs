@@ -16,7 +16,7 @@ namespace ConsoleAppExcersices.BE
 
         public override void Action()
         {
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine("Name your video");
             string name = Console.ReadLine();
 
@@ -35,8 +35,9 @@ namespace ConsoleAppExcersices.BE
             string content = Console.ReadLine();
             Video video = new Video(name, largestId + 1, content);
             MOdel.videos.Add(video);
-            Console.WriteLine($"Video {video.Name} added. Press any key to return to menu");
-            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine($"Video {video.Name} added. Press any enter to return to menu");
+            Console.ReadLine();
         }
     }
 }

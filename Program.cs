@@ -24,18 +24,18 @@ namespace ConsoleAppExcersices
             menuCreate.MOdel = model;
             items.Add(menuCreate);
 
-            //MenuCreate menuCreate = new MenuCreate("Create");
-            //menuCreate.MOdel = model;
-            //items.Add(menuCreate);
+            MenuShow menuShow = new MenuShow("List videos");
+            menuShow.MOdel = model;
+            items.Add(menuShow);
 
 
             while (true)
             {
                 int chosenItem = model.Menu(items, "Main");
-
+                Console.Clear();
                 items[chosenItem].Action();
-                //Console.WriteLine(chosenItem);
-                Console.ReadLine();
+                
+            
             }
             
 

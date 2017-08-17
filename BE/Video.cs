@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleAppExcersices.BE;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,17 +7,26 @@ namespace ConsoleAppExcersices
 {
     
 
-    public class Video
+    public class Video: MenuItem
     {
-        public string Name { get; set;}
         public int Id { get; set; }
         public string Content { get; set; }
 
-        public Video(string name, int id, string content)
+        public Video(string name, int id, string content) : base(name)
         {
-            this.Name = name;
             this.Id = id;
             this.Content = content;
+        }
+
+        //public string Name { get; set;}
+        
+
+        
+
+        public override void Action()
+        {                              
+            Console.WriteLine($"(ID: {Id}) {Name}: {Content}");
+            Console.ReadLine();
         }
     }
 }

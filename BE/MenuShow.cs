@@ -13,7 +13,20 @@ namespace ConsoleAppExcersices.BE
 
         public override void Action()
         {
+            List<Video> videos = MOdel.Videos;
+            List<MenuItem> menuItems = new List<MenuItem>();
 
+
+
+            for (int i = 0; i < videos.Count; i++)
+            {
+                menuItems.Add(videos[i]);
+            }
+
+            int value = MOdel.Menu(menuItems, "Videos");
+            menuItems[value].Action();
+
+            Console.ReadLine();
         }
     }
 }

@@ -21,7 +21,7 @@ namespace ConsoleAppExcersices.BE
             string name = Console.ReadLine();
 
             int largestId = 0;
-            List<Video> videos = MOdel.videos;
+            List<Video> videos = MOdel.Videos;
             for (int i = 0; i < videos.Count; i++)
             {
                 if (largestId < videos[i].Id)
@@ -34,7 +34,7 @@ namespace ConsoleAppExcersices.BE
 
             string content = Console.ReadLine();
             Video video = new Video(name, largestId + 1, content);
-            MOdel.videos.Add(video);
+            MOdel.Videos.Add(video);
             Console.Clear();
             Console.WriteLine($"Video {video.Name} added. Press any enter to return to menu");
             Console.ReadLine();

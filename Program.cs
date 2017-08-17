@@ -28,21 +28,16 @@ namespace ConsoleAppExcersices
             menuShow.MOdel = model;
             items.Add(menuShow);
 
-
-            while (true)
+            int chosenItem = 0;
+            while (chosenItem != -1)
             {
-                int chosenItem = model.Menu(items, "Main");
+                chosenItem = model.Menu(items, "Main");
                 Console.Clear();
-                items[chosenItem].Action();
-                
-            
+                if (chosenItem != -1)
+                {
+                    items[chosenItem].Action();
+                }
             }
-            
-
-
         }
-
-        
-
     }
 }

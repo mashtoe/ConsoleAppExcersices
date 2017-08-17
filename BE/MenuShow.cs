@@ -26,7 +26,7 @@ namespace ConsoleAppExcersices.BE
             int value = MOdel.Menu(menuItems, "Videos");
             menuItems[value].Action();
 
-            Console.ReadLine();
+            
         }
     }
 }

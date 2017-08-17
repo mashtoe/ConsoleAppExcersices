@@ -11,7 +11,7 @@ namespace ConsoleAppExcersices.BE
 
         public MenuCreate(string name) : base(name)
         {
-            Console.WriteLine("The name is: " + name);
+            //Console.WriteLine("The name is: " + name);
         }
 
         public override void Action()
@@ -29,13 +29,11 @@ namespace ConsoleAppExcersices.BE
                     largestId = videos[i].Id;
                 }
             }
-            Console.WriteLine();
-            Console.WriteLine("Enter the content of the video");
 
-            string content = Console.ReadLine();
-            Video video = new Video(name, largestId + 1, content);
+            Video video = new Video(name, largestId + 1);
+            video.StartRecording();
             MOdel.Videos.Add(video);
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine($"Video {video.Name} added. Press any enter to return to menu");
             Console.ReadLine();
         }

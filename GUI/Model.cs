@@ -18,6 +18,11 @@ namespace ConsoleAppExcersices.GUI
         {
             Console.Clear();
             Console.WriteLine($"------{nameOfMenu}------\n");
+
+            MenuBack back = new MenuBack("(Leave)");
+            back.MOdel = this;
+            items.Add(back);
+
             if (items.Count > 0)
             {
                 for (int i = 0; i < items.Count; i++)
@@ -30,7 +35,9 @@ namespace ConsoleAppExcersices.GUI
                 {
                     Console.WriteLine($"Enter number between 1-{items.Count}");
                 }
+
                 return chosenItem - 1;
+               
             }
             else
             {

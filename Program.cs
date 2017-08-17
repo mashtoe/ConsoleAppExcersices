@@ -7,7 +7,6 @@ namespace ConsoleAppExcersices
 {
     class Program
     {
-        private List<MenuItem> items;
         private Model model;
 
         static void Main(string[] args)
@@ -18,7 +17,26 @@ namespace ConsoleAppExcersices
         public Program()
         {
             model = new Model();
-            items = new List<MenuItem>();
+
+            bool running = true;
+            while (running)
+            {
+                List<MenuItem> items = CreateItems();
+
+                int chosenItem = model.Menu(items, "Main");
+                Console.Clear();
+
+                items[chosenItem].Action();
+                if (chosenItem == items.Count-1)
+                {
+                    running = false;
+                }   
+            }
+        }
+
+        public List<MenuItem> CreateItems()
+        {
+            List<MenuItem> items = new List<MenuItem>();
 
             MenuCreate menuCreate = new MenuCreate("Create");
             menuCreate.MOdel = model;
@@ -27,17 +45,7 @@ namespace ConsoleAppExcersices
             MenuShow menuShow = new MenuShow("List videos");
             menuShow.MOdel = model;
             items.Add(menuShow);
-
-            int chosenItem = 0;
-            while (chosenItem != -1)
-            {
-                chosenItem = model.Menu(items, "Main");
-                Console.Clear();
-                if (chosenItem != -1)
-                {
-                    items[chosenItem].Action();
-                }
-            }
+            return items;
         }
     }
 }

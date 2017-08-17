@@ -34,7 +34,7 @@ namespace ConsoleAppExcersices.BE
             video.StartRecording();
             MOdel.Videos.Add(video);
             //Console.Clear();
-            Console.WriteLine($"Video {video.Name} added. Press any enter to return to menu");
+            Console.WriteLine($"Video {video.Name} recorded and added. Press enter to return to the main menu");
             Console.ReadLine();
         }
     }

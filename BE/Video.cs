@@ -126,7 +126,7 @@ namespace ConsoleAppExcersices
             {
                 string pos = actors[i].Frames[frame];
 
-
+                //splitting would be easier. (x,y)
                 int x = int.Parse(pos.Substring(0, pos.IndexOf(",")));
                 int y = int.Parse(pos.Substring(pos.IndexOf(",")+1, (pos.Length-1)-pos.IndexOf(",")));
 

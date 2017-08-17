@@ -10,12 +10,13 @@ namespace ConsoleAppExcersices
     {
         public string Name { get; set;}
         public int Id { get; set; }
+        public string Content { get; set; }
 
-
-        public Video(string name, int id)
+        public Video(string name, int id, string content)
         {
             this.Name = name;
             this.Id = id;
+            this.Content = content;
         }
     }
 }

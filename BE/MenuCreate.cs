@@ -19,7 +19,24 @@ namespace ConsoleAppExcersices.BE
             Console.Clear();
             Console.WriteLine("Name your video");
             string name = Console.ReadLine();
-            Video video = new Video(name);
+
+            int largestId = 0;
+            List<Video> videos = MOdel.videos;
+            for (int i = 0; i < videos.Count; i++)
+            {
+                if (largestId < videos[i].Id)
+                {
+                    largestId = videos[i].Id;
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine("Enter the content of the video");
+
+            string content = Console.ReadLine();
+            Video video = new Video(name, largestId + 1, content);
+            MOdel.videos.Add(video);
+            Console.WriteLine($"Video {video.Name} added. Press any key to return to menu");
+            Console.ReadKey();
         }
     }
 }

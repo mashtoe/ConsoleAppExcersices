@@ -21,23 +21,31 @@ namespace ConsoleAppExcersices
             items = new List<MenuItem>();
 
             MenuCreate menuCreate = new MenuCreate("Create");
-            menuCreate.Model = model;
+            menuCreate.MOdel = model;
+            items.Add(menuCreate);
+
+            MenuCreate menuCreate = new MenuCreate("Create");
+            menuCreate.MOdel = model;
             items.Add(menuCreate);
 
 
-            int chosenItem = CreateMenu(items);
+            while (true)
+            {
+                int chosenItem = Menu(items, "Main");
 
-            items[chosenItem].Action();
-            //Console.WriteLine(chosenItem);
-            Console.ReadLine();
+                items[chosenItem].Action();
+                //Console.WriteLine(chosenItem);
+                Console.ReadLine();
+            }
+            
 
 
         }
 
-        private int CreateMenu(List<MenuItem> items)
+        private int Menu(List<MenuItem> items, string nameOfMenu)
         {
             Console.Clear();
-            Console.WriteLine("------Menu------\n");
+            Console.WriteLine($"------{nameOfMenu}------\n");
             
             for (int i = 0; i < items.Count; i++)
             {

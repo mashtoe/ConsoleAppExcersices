@@ -7,7 +7,7 @@ namespace ConsoleAppExcersices
 {
     public abstract class MenuItem
     {
-        public Model Model { get; set; }
+        public Model MOdel { get; set; }
         public string Name { get;}
 
         public MenuItem(string name)

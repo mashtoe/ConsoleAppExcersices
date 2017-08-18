@@ -4,11 +4,10 @@ using System.Text;
 
 namespace ConsoleAppExcersices.BE
 {
-    public class MenuShow : MenuItem
+    class MenuUpdate : MenuItem
     {
-        public MenuShow(string name) : base(name)
+        public MenuUpdate(string name) : base(name)
         {
-
         }
 
         public override void Action()
@@ -18,13 +17,14 @@ namespace ConsoleAppExcersices.BE
 
             for (int i = 0; i < videos.Count; i++)
             {
-                menuItems.Add(videos[i]);
+                MenuUpdateItem item = new MenuUpdateItem(videos[i].Name);
+                item.VideoHeld = videos[i];
+                menuItems.Add(item);
             }
 
-            int value = MOdel.Menu(menuItems, "Videos");
+            int value = MOdel.Menu(menuItems, "Update name of a video");
             menuItems[value].Action();
 
-            
         }
     }
 }

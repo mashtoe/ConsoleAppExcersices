@@ -44,7 +44,7 @@ namespace ConsoleAppExcersices
 
             bool running = true;
             int frame = 0;
-            ConsoleKey keyPress = ConsoleKey.Z;//cant be null
+            ConsoleKey keyPress = ConsoleKey.A;//cant be null
 
             while(running)
             {

@@ -4,11 +4,10 @@ using System.Text;
 
 namespace ConsoleAppExcersices.BE
 {
-    public class MenuShow : MenuItem
+    class MenuDelete : MenuItem
     {
-        public MenuShow(string name) : base(name)
+        public MenuDelete(string name) : base(name)
         {
-
         }
 
         public override void Action()
@@ -18,13 +17,14 @@ namespace ConsoleAppExcersices.BE
 
             for (int i = 0; i < videos.Count; i++)
             {
-                menuItems.Add(videos[i]);
+                MenuDeleteItem item = new MenuDeleteItem(videos[i].Name);
+                item.VideoHeld = videos[i];
+                item.MOdel = MOdel;
+                menuItems.Add(item);
             }
 
-            int value = MOdel.Menu(menuItems, "Videos");
+            int value = MOdel.Menu(menuItems, "Delete video");
             menuItems[value].Action();
-
-            
         }
     }
 }

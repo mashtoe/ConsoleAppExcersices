@@ -45,7 +45,17 @@ namespace ConsoleAppExcersices
             MenuShow menuShow = new MenuShow("List videos");
             menuShow.MOdel = model;
             items.Add(menuShow);
+
+            MenuUpdate menuUpdate = new MenuUpdate("Update video");
+            menuUpdate.MOdel = model;
+            items.Add(menuUpdate);
+
+            MenuDelete menuDelete = new MenuDelete("Delete video");
+            menuDelete.MOdel = model;
+            items.Add(menuDelete);
+
             return items;
+
         }
     }
 }

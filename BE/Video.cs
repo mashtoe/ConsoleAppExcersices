@@ -7,32 +7,31 @@ namespace ConsoleAppExcersices
 {
     
 
-    public class Video: MenuItem
+    public class Video
     {
-        public int Id { get; set; }
+        public int Id { get; }
         public int size { get; }
         public int totalFrames { get; }
         private List<Actor> actors;
+        public string Name { get; set; }
         
         //public string Content { get; set; }
 
-        public Video(string name, int id) : base(name)
+        public Video(string name, int id)// : base(name)
         {
-            size = 20;
+            size = 30;
             totalFrames = 100;
             this.Id = id;
             actors = new List<Actor>();
+            this.Name = name;
         }
 
         //public string Name { get; set;}
         
-
-        
-
-        public override void Action()
-        {
-            PlayRecording();
-        }
+        //public override void Action()
+        //{
+        //    PlayRecording();
+        //}
 
         public void StartRecording()
         {
@@ -52,12 +51,10 @@ namespace ConsoleAppExcersices
                 {
                     MoveUnit(player, keyPress, size);
                 }
-                
 
                 Console.Clear();
                 InputScreen(screen,size);
                 InputActors(frame,screen);
-                
                 
                 DrawScreen(screen, size);
 
@@ -74,9 +71,7 @@ namespace ConsoleAppExcersices
                 {
                     running = false;
                 }
-
             }
-
         }
 
         private void MoveUnit(Actor actor,  ConsoleKey keyPress, int size)
@@ -172,7 +167,6 @@ namespace ConsoleAppExcersices
         public void PlayRecording()
         {
             string[,] screen = new string[size, size];
-
 
             for (int i = 0; i < totalFrames; i++)
             {

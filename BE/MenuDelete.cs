@@ -8,6 +8,7 @@ namespace ConsoleAppExcersices.BE
     {
         public MenuDelete(string name) : base(name)
         {
+            
         }
 
         public override void Action()

@@ -55,7 +55,6 @@ namespace ConsoleAppExcersices
             items.Add(menuDelete);
 
             return items;
-
         }
     }
 }

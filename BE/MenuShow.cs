@@ -18,7 +18,10 @@ namespace ConsoleAppExcersices.BE
 
             for (int i = 0; i < videos.Count; i++)
             {
-                menuItems.Add(videos[i]);
+                MenuShowItem item = new MenuShowItem(videos[i].Name);
+                item.VideoHeld = videos[i];
+                item.MOdel = MOdel;
+                menuItems.Add(item);
             }
 
             int value = MOdel.Menu(menuItems, "Videos");
